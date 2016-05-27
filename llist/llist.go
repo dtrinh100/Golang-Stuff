@@ -20,12 +20,14 @@ type LList struct {
 	size int
 }
 
+// New creates a new Linked List
 func New() *LList {
 	var l LList
 	l.size = 0
 	return &l
 }
 
+// Add adds an element towards the end of the linked list
 func (l *LList) Add(num int) {
 	n := &node{val: num}
 	l.size++
@@ -46,6 +48,7 @@ func (l *LList) Add(num int) {
 
 }
 
+// Delete deletes the specific node containing such element instead of using position for delete
 func (l *LList) Delete(num int) bool {
 	found := false
 	curr := l.head
@@ -69,6 +72,7 @@ func (l *LList) Delete(num int) bool {
 	return found
 }
 
+// Contains check to see if the element is in the Linked List
 func (l *LList) Contains(num int) bool {
 	found := false
 	curr := l.head
@@ -85,10 +89,12 @@ func (l *LList) Contains(num int) bool {
 	return found
 }
 
+// Size returns how big the Linked List is
 func (l *LList) Size() int {
 	return l.size
 }
 
+// String prints all the elements in the Linked List
 func (l *LList) String() string {
 	str := ""
 	curr := l.head
